@@ -19,3 +19,8 @@ div {
     display: flex;
     flex-direction: column;
 }
+
+.pChoisir{
+    display: flex;
+    flex-direction: column;
+}
