@@ -17,22 +17,30 @@ function nbRandom(){
 }
 
 btn1.addEventListener('click', function(){
-    random.innerHTML = `${nbRandom()}`;
+    let nb = nbRandom()
+    random.innerHTML = `${nb}`;
 });
 
 /*ex2*/
+function bonjour(nom){
+    // manque espace
+    let regex = new RegExp("^[a-zA-Z/ä-ÿÄ-Ÿ/-]+$");
+
+    if (nom ==""){
+        return 'Veuillez entrer un nom';
+    } else if ( !regex.test(nom)){
+        return 'mauvais caractères';
+    } else {
+        return 'bonjour ' + nom;
+    }
+
+}
+
 btn2.addEventListener('click', function(){
+
     let val = input1.value;
-    let regex = new RegExp("^[a-zA-Z/ä-ÿÄ-Ÿ/-/\w]+$");
-    
-    if (val ==""){
-        alert('Veuillez entrer un nom');
-    } else if ( !regex.test(val)){
-        alert('mauvais caractères');
-    }
-    else{
-        p2.innerHTML = `bonjour ${val}`;    
-    }
+    let reponse = bonjour(val);
+    p2.innerHTML = `${reponse}`;  
 })
 
 /*ex3*/
