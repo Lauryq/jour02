@@ -23,7 +23,9 @@ btn2.addEventListener('click', function(){
     let val = input1.value;
     let regex = new RegExp("^[a-zA-Z/ä-ÿÄ-Ÿ]+$");
     
-    if ( !regex.test(val)){
+    if (val ==""){
+        alert('Veuillez entrer un nom');
+    } else if ( !regex.test(val)){
         alert('mauvais caractères');
     }
     else{
