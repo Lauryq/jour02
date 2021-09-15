@@ -4,6 +4,7 @@ const btn3 = document.querySelector('.btn3');
 const btn4 = document.querySelector('.btn4');
 const input1 = document.querySelector('.input1');
 const input2 = document.querySelector('.input2');
+const input3 = document.querySelector('.input3');
 const random = document.querySelector('.random');
 const p2 = document.querySelector('.bjr');
 const p3 = document.querySelector('.tva');
@@ -37,13 +38,13 @@ btn3.addEventListener('click', function(){
     let calc = val * tva;
     let regex = new RegExp("^[0-9]+$");
 
-    if ( !regex.test(val)){
+    if (val == ""){
+        alert('Veuillez entrer une valeur');
+    } else if (!regex.test(val)){
         alert('Entrer des chiffres uniquement');
-    }
-    else{
+    } else{
         p3.innerHTML = `${calc}`;   
     }
-    
     
 })
 
