@@ -44,19 +44,25 @@ btn2.addEventListener('click', function(){
 })
 
 /*ex3*/
-btn3.addEventListener('click', function(){
+function tva(nbTva){
     let tva = 1.2;
-    let val = input2.value;
-    let calc = val * tva;
+    let calc = nbTva * tva;
     let regex = new RegExp("^[0-9/./,]+$");
 
-    if (val == ""){
-        alert('Veuillez entrer une valeur');
-    } else if (!regex.test(val)){
-        alert('Entrer des chiffres uniquement');
+    if (nbTva == ""){
+        return 'Veuillez entrer une valeur';
+    } else if (!regex.test(nbTva)){
+        return 'Entrer des chiffres uniquement';
     } else{
-        p3.innerHTML = `${calc}`;   
+        return calc;   
     }
+}
+
+btn3.addEventListener('click', function(){
+    
+    let val = input2.value;
+    let reponse = tva(val);
+    p3.innerHTML = `${reponse}`;   
     
 })
 
