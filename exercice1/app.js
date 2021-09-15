@@ -21,7 +21,7 @@ btn1.addEventListener('click', function(){
 /*ex2*/
 btn2.addEventListener('click', function(){
     let val = input1.value;
-    let regex = new RegExp("^[a-zA-Z/ä-ÿÄ-Ÿ]+$");
+    let regex = new RegExp("^[a-zA-Z/ä-ÿÄ-Ÿ/-/\w]+$");
     
     if (val ==""){
         alert('Veuillez entrer un nom');
@@ -38,7 +38,7 @@ btn3.addEventListener('click', function(){
     let tva = 1.2;
     let val = input2.value;
     let calc = val * tva;
-    let regex = new RegExp("^[0-9]+$");
+    let regex = new RegExp("^[0-9/./,]+$");
 
     if (val == ""){
         alert('Veuillez entrer une valeur');
@@ -50,3 +50,18 @@ btn3.addEventListener('click', function(){
     
 })
 
+/*ex4*/
+btn4.addEventListener('click', function(){
+    
+    let val = input3.value;
+    let regex = new RegExp("^[0-9/./,]+$");
+    if(val > 1.90){
+        alert('trop grand pour le manège');
+    } else if (val < 1.54){
+        alert('trop petit pour le manège');
+    } else if (!regex.test(val)){
+        alert('Entrer des chiffres uniquement');
+    } else {
+        alert('super! tu peux y aller');
+    }
+})
