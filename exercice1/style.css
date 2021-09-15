@@ -1,12 +1,49 @@
-main {
-    display: flex;
-    height: 98vh;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
+body {
+    margin: 0;
 }
 
+main {
+    display:grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+    height: 100vh;
+    align-items: center;
+    background-color: aquamarine;
+}
+
+hr {
+    display: none;
+}
+
+div {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+input {
+    width: 10rem;
+}
 button {
     width: 5rem;
     height: 5rem;
+    border: none;
+    background-color: cornflowerblue;
+    border-radius: 10px;
+    color: white;
+}
+
+@media screen and (max-width: 1024px) {
+    main {
+        display: flex;
+        flex-direction: column;
+    }
+
+    hr {
+        display: block;
+        width: 15rem;
+        border: 1px solid rgb(177, 177, 177);
+    }
 }
