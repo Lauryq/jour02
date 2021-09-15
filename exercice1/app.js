@@ -25,7 +25,7 @@ btn1.addEventListener('click', function(){
 /*ex2*/
 function bonjour(nom){
     // manque espace
-    let regex = new RegExp("^[a-zA-Z/ä-ÿÄ-Ÿ/-/\t]+$");
+    let regex = new RegExp("^[a-zA-Zä-ÿÄ-Ÿ-\\s]+$");
 
     if (nom ==""){
         return 'Veuillez entrer un nom';
