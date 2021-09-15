@@ -11,11 +11,13 @@ const p3 = document.querySelector('.tva');
 const main = document.querySelector('main');
 
 /*ex1*/
-btn1.addEventListener('click', function(){
-    
+function nbRandom(){
     let nb = Math.floor(Math.random() * 1000);
-    random.innerHTML = `${nb}`;
-    
+    return nb;
+}
+
+btn1.addEventListener('click', function(){
+    random.innerHTML = `${nbRandom()}`;
 });
 
 /*ex2*/
@@ -52,7 +54,7 @@ btn3.addEventListener('click', function(){
 
 /*ex4*/
 btn4.addEventListener('click', function(){
-    
+
     let val = input3.value;
     let regex = new RegExp("^[0-9/./,]+$");
     if(val > 1.90){
