@@ -9,6 +9,7 @@ const random = document.querySelector('.random');
 const p2 = document.querySelector('.bjr');
 const p3 = document.querySelector('.tva');
 const main = document.querySelector('main');
+const p4 = document.querySelector('.cm');
 
 /*ex1*/
 function nbRandom(){
@@ -24,7 +25,7 @@ btn1.addEventListener('click', function(){
 /*ex2*/
 function bonjour(nom){
     // manque espace
-    let regex = new RegExp("^[a-zA-Z/ä-ÿÄ-Ÿ/-]+$");
+    let regex = new RegExp("^[a-zA-Z/ä-ÿÄ-Ÿ/-/\t]+$");
 
     if (nom ==""){
         return 'Veuillez entrer un nom';
@@ -67,17 +68,22 @@ btn3.addEventListener('click', function(){
 })
 
 /*ex4*/
+function manege(taille){
+    let regex = new RegExp("^[0-9/./,]+$");
+    if(taille > 1.90){
+        return 'trop grand pour le manège';
+    } else if (taille < 1.54){
+        return 'trop petit pour le manège';
+    } else if (!regex.test(taille)){
+        return 'Entrer des chiffres uniquement';
+    } else {
+        return 'super! tu peux y aller';
+    }
+}
+
 btn4.addEventListener('click', function(){
 
     let val = input3.value;
-    let regex = new RegExp("^[0-9/./,]+$");
-    if(val > 1.90){
-        alert('trop grand pour le manège');
-    } else if (val < 1.54){
-        alert('trop petit pour le manège');
-    } else if (!regex.test(val)){
-        alert('Entrer des chiffres uniquement');
-    } else {
-        alert('super! tu peux y aller');
-    }
+    let reponse = manege(val);
+    p4.innerHTML = `${reponse}`;
 })
